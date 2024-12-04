@@ -180,6 +180,16 @@ ol {
         h2 {
             text-align: center;
         }
+
+        a {
+            text-align: center;
+            color: #2980b9;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 
