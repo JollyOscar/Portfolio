@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alex Gamble — IT Systems Management & Security student at NSCC Truro. Portfolio of projects in cybersecurity, cloud infrastructure, network engineering, and AI." />
+  <title>Alex Gamble | IT Systems &amp; Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Rain canvas — rendered behind everything -->
+  <canvas id="rain-canvas" aria-hidden="true"></canvas>
+
+  <!-- ═══════════════════════ NAV ═══════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Primary navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">AG<span class="teal">.</span></a>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#learning" class="nav-link">Learning</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle"
+              aria-label="Open navigation menu" aria-expanded="false"
+              aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section id="hero" aria-label="Introduction">
+      <div class="hero-content">
+        <p class="hero-tag mono">// NSCC · Truro Campus · Systems Management &amp; Security</p>
+        <h1>Alex Gamble<span class="cursor" aria-hidden="true">_</span></h1>
+        <h2>IT Systems Management &amp; Security</h2>
+        <p class="hero-sub">
+          Building secure, reproducible infrastructure — from hardened Linux appliances
+          to cloud deployments.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Portfolio</a>
+          <a href="https://jollyoscar.github.io/Resume_Assignment/"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-outline">View Resume</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/JollyOscar" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57
+                       0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695
+                       -.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99
+                       .105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225
+                       -.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405
+                       c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225
+                       0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3
+                       0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/alex-gamble-987805351"
+             target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136
+                       1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85
+                       3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065
+                       2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225
+                       0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2
+                       24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="mailto:thealexgamble@gmail.com" aria-label="Send email">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91
+                       v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.909
+                       L12 10.09l9.455-6.269h.909A1.636 1.636 0 0 1 24 5.457z"/>
+            </svg>
+            Email
+          </a>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="mono">scroll</span>
+        <div class="scroll-bar"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ ABOUT · introduction ═══════════════════════ -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <header class="section-header fade-in">
+          <span class="section-tag mono">// 01</span>
+          <h2 id="about-heading" class="section-title">Introduction</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text fade-in">
+            <p class="about-lead">
+              Hi — I'm <strong class="teal">Alex Gamble</strong>, a first-year student in the
+              <strong class="teal">IT Systems Management &amp; Security</strong> diploma program
+              at NSCC's Truro Campus.
+            </p>
+
+            <div class="about-block">
+              <h3 class="ember">Why NSCC?</h3>
+              <p>
+                NSCC Truro's IT program is known for one of the strongest graduate-to-employment
+                ratios in the region. The program is built on hands-on, practical work that mirrors
+                real-world environments — not just textbook theory. That track record of actually
+                placing students into the industry made the choice obvious.
+              </p>
+            </div>
+
+            <div class="about-block">
+              <h3 class="ember">Career Direction</h3>
+              <p>
+                I'm pursuing a career across the full scope of what the program covers —
+                <strong>cybersecurity</strong>, <strong>cloud infrastructure</strong>,
+                <strong>systems administration</strong>, or any combination that puts complex
+                systems in front of me. The field is evolving fast and I intend to grow with it.
+              </p>
+            </div>
+
+            <div class="about-block">
+              <h3 class="ember">Career Goals</h3>
+              <p>
+                <span class="label-inline mono">Short-term:</span>
+                Secure an IT role where I can apply my infrastructure and security skills in
+                a real team environment, learning under experienced professionals while
+                contributing from day one.
+              </p>
+              <p>
+                <span class="label-inline mono">Long-term:</span>
+                Develop deep expertise in security operations or cloud architecture — building
+                and defending the kind of infrastructure organizations depend on around the clock.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-stats fade-in" aria-label="Quick facts">
+            <div class="stat-card">
+              <span class="stat-num teal">5+</span>
+              <span class="stat-label">Major Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num teal">2+</span>
+              <span class="stat-label">Self-Directed Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num teal">6yr</span>
+              <span class="stat-label">Operational Reliability</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num teal">NSCC</span>
+              <span class="stat-label">Truro · 2024 – Present</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+    <section id="skills" class="section section-alt" aria-labelledby="skills-heading">
+      <div class="container">
+        <header class="section-header fade-in">
+          <span class="section-tag mono">// 02</span>
+          <h2 id="skills-heading" class="section-title">Technical Skills</h2>
+        </header>
+
+        <div class="skills-grid fade-in">
+          <div class="skill-cat">
+            <h3>Systems Administration</h3>
+            <ul class="tag-list" role="list">
+              <li class="tag">Windows Server 2025</li>
+              <li class="tag">Ubuntu Server 24.04</li>
+              <li class="tag">Active Directory (AD DS)</li>
+              <li class="tag">Group Policy (GPO)</li>
+            </ul>
+          </div>
+          <div class="skill-cat">
+            <h3>Network Security</h3>
+            <ul class="tag-list" role="list">
+              <li class="tag">nftables</li>
+              <li class="tag">BIND9 DNS</li>
+              <li class="tag">Kea DHCP</li>
+              <li class="tag">NAT / Routing</li>
+              <li class="tag">Fail2Ban</li>
+              <li class="tag">SSH Hardening</li>
+              <li class="tag">AIDE (File Integrity)</li>
+            </ul>
+          </div>
+          <div class="skill-cat">
+            <h3>Cloud &amp; Containers</h3>
+            <ul class="tag-list" role="list">
+              <li class="tag">AWS EC2</li>
+              <li class="tag">AWS VPC / Security Groups</li>
+              <li class="tag">Docker</li>
+              <li class="tag">Nginx</li>
+            </ul>
+          </div>
+          <div class="skill-cat">
+            <h3>Automation &amp; DevOps</h3>
+            <ul class="tag-list" role="list">
+              <li class="tag">Bash Scripting</li>
+              <li class="tag">Python</li>
+              <li class="tag">PowerShell</li>
+              <li class="tag">Git / GitHub</li>
+              <li class="tag">Infrastructure-as-Code</li>
+            </ul>
+          </div>
+          <div class="skill-cat">
+            <h3>AI / Emerging Tech</h3>
+            <ul class="tag-list" role="list">
+              <li class="tag tag-ember">LLM Agent Development</li>
+              <li class="tag tag-ember">Python AI Tooling</li>
+            </ul>
+          </div>
+          <div class="skill-cat">
+            <h3>Compliance &amp; Safety</h3>
+            <ul class="tag-list" role="list">
+              <li class="tag">WHMIS &amp; OH&amp;S</li>
+              <li class="tag">Standard First Aid &amp; CPR</li>
+              <li class="tag">Gov. Security Screening Eligible</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ PROJECTS ═══════════════════════ -->
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <div class="container">
+        <header class="section-header fade-in">
+          <span class="section-tag mono">// 03</span>
+          <h2 id="projects-heading" class="section-title">Portfolio Artifacts</h2>
+          <p class="section-sub">
+            Projects built during and alongside the NSCC program — each one applied in a
+            real environment, not a sandbox exercise.
+          </p>
+        </header>
+
+        <div class="projects-grid">
+
+          <!-- CAPSTONE — featured -->
+          <article class="project-card project-featured fade-in" aria-label="Capstone 2026 project">
+            <div class="project-meta">
+              <span class="project-badge badge-teal">Capstone 2026</span>
+            </div>
+            <h3>Capstone Project 2026</h3>
+            <p>
+              Final-year capstone project integrating the full scope of the Systems Management
+              &amp; Security program. A comprehensive, production-oriented deployment synthesising
+              networking, security hardening, and infrastructure design skills developed throughout
+              the diploma.
+            </p>
+            <ul class="project-detail-list">
+              <li>Full lifecycle: design → deployment → testing → documentation</li>
+              <li>Demonstrates readiness for real-world enterprise environments</li>
+              <li>Capstone represents the program's highest-order learning artifact</li>
+            </ul>
+            <div class="project-footer">
+              <ul class="tag-list" role="list">
+                <li class="tag tag-teal">Systems Security</li>
+                <li class="tag tag-teal">Infrastructure Design</li>
+                <li class="tag tag-teal">Capstone</li>
+              </ul>
+              <a href="https://github.com/JollyOscar/Capstone2026"
+                 target="_blank" rel="noopener noreferrer"
+                 class="project-link">View on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- OSCAR LLM -->
+          <article class="project-card fade-in" aria-label="Oscar LLM Agent project">
+            <div class="project-meta">
+              <span class="project-icon" aria-hidden="true">🤖</span>
+              <span class="project-badge badge-ember">Self-Directed</span>
+            </div>
+            <h3>Oscar — LLM Agent</h3>
+            <p>
+              A self-directed project: building a custom AI conversational agent from scratch.
+              No assignment, no deadline — purely curiosity-driven exploration of language
+              model architecture and Python AI tooling outside the core curriculum.
+            </p>
+            <div class="project-footer">
+              <ul class="tag-list" role="list">
+                <li class="tag tag-ember">Python</li>
+                <li class="tag tag-ember">LLM</li>
+                <li class="tag tag-ember">AI Agent</li>
+              </ul>
+              <a href="https://github.com/JollyOscar/LLM"
+                 target="_blank" rel="noopener noreferrer"
+                 class="project-link">View on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- UBUNTU APPLIANCE -->
+          <article class="project-card fade-in" aria-label="Ubuntu Network Services Appliance project">
+            <div class="project-meta">
+              <span class="project-icon" aria-hidden="true">🛡️</span>
+            </div>
+            <h3>Ubuntu Network Services Appliance</h3>
+            <p>
+              Multi-service network appliance on Ubuntu Server 24.04 LTS — acting as a
+              full router/gateway with enterprise-grade DNS (BIND9), DHCP (Kea), and a
+              hardened nftables firewall using a default-deny policy, rate limiting, NAT,
+              and DoS protection. Everything deployed via reproducible Bash scripts
+              with a full testing suite.
+            </p>
+            <ul class="project-detail-list">
+              <li>AIDE file integrity monitoring + Fail2Ban intrusion mitigation</li>
+              <li>Hardened SSH with key-only auth + sysctl kernel tuning</li>
+              <li>Scripted deployment: fresh install to running in minutes</li>
+            </ul>
+            <div class="project-footer">
+              <ul class="tag-list" role="list">
+                <li class="tag tag-teal">Ubuntu Server</li>
+                <li class="tag tag-teal">BIND9</li>
+                <li class="tag tag-teal">nftables</li>
+                <li class="tag tag-teal">Kea DHCP</li>
+                <li class="tag tag-teal">Bash IaC</li>
+              </ul>
+              <a href="https://github.com/JollyOscar/server-config-repo"
+                 target="_blank" rel="noopener noreferrer"
+                 class="project-link">View on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- WINDOWS SERVER -->
+          <article class="project-card fade-in" aria-label="Windows Server Infrastructure project">
+            <div class="project-meta">
+              <span class="project-icon" aria-hidden="true">🖥️</span>
+            </div>
+            <h3>Windows Server Infrastructure</h3>
+            <p>
+              Architected a virtualized small-office environment using Windows Server 2025.
+              Configured Active Directory Domain Services for centralized authentication,
+              and implemented Group Policy Objects for security enforcement, drive mapping,
+              and policy standardization across the domain.
+            </p>
+            <div class="project-footer">
+              <ul class="tag-list" role="list">
+                <li class="tag tag-teal">Windows Server 2025</li>
+                <li class="tag tag-teal">AD DS</li>
+                <li class="tag tag-teal">GPO</li>
+                <li class="tag tag-teal">Virtualization</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- CLOUD / DOCKER -->
+          <article class="project-card fade-in" aria-label="Cloud Infrastructure project">
+            <div class="project-meta">
+              <span class="project-icon" aria-hidden="true">☁️</span>
+            </div>
+            <h3>Cloud Infrastructure &amp; Containerization</h3>
+            <p>
+              Deployed AWS EC2 instances (Ubuntu 24.04) with security groups providing
+              granular traffic control. Orchestrated containerized web services using Docker
+              and Nginx for routing validation. Developed IaC solutions with Bash scripts
+              under Git version control for repeatable, auditable deployments.
+            </p>
+            <div class="project-footer">
+              <ul class="tag-list" role="list">
+                <li class="tag tag-teal">AWS EC2 / VPC</li>
+                <li class="tag tag-teal">Docker</li>
+                <li class="tag tag-teal">Nginx</li>
+                <li class="tag tag-teal">IaC</li>
+              </ul>
+              <a href="https://github.com/JollyOscar/docker-install-guide"
+                 target="_blank" rel="noopener noreferrer"
+                 class="project-link">View on GitHub →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ LEARNING HIGHLIGHTS ═══════════════════════ -->
+    <section id="learning" class="section section-alt" aria-labelledby="learning-heading">
+      <div class="container">
+        <header class="section-header fade-in">
+          <span class="section-tag mono">// 04</span>
+          <h2 id="learning-heading" class="section-title">Key Learning Highlights</h2>
+          <p class="section-sub">
+            The most significant takeaways from the NSCC program — and why each one
+            matters to employers.
+          </p>
+        </header>
+
+        <div class="learning-grid fade-in">
+
+          <div class="learning-card">
+            <span class="learning-num mono">01</span>
+            <h3>Security-First Mindset</h3>
+            <p>
+              Every configuration starts from a default-deny baseline and works upward.
+              Hardened SSH, nftables rulesets, file integrity monitoring, and Fail2Ban are
+              not extras — they're the foundation. This approach directly reduces
+              organizational attack surface.
+            </p>
+            <p class="employer-benefit">
+              <span class="ember">Employer value:</span>
+              Fewer incidents, smaller blast radius, audit-ready environments from day one.
+            </p>
+          </div>
+
+          <div class="learning-card">
+            <span class="learning-num mono">02</span>
+            <h3>Reproducibility &amp; Automation</h3>
+            <p>
+              Build it once, deploy it reliably, forever. The Ubuntu appliance goes from fresh
+              OS to full production services in minutes via scripted deployment — version-controlled,
+              verified, and documented. Infrastructure that exists only in someone's head
+              is a liability.
+            </p>
+            <p class="employer-benefit">
+              <span class="ember">Employer value:</span>
+              Faster recovery time, consistent environments across teams, reduced human error.
+            </p>
+          </div>
+
+          <div class="learning-card">
+            <span class="learning-num mono">03</span>
+            <h3>Documentation as a Discipline</h3>
+            <p>
+              Every project includes step-by-step guides, placeholder patterns, troubleshooting
+              runbooks, and changelogs. Documentation isn't written afterward — it's built
+              alongside the work. Non-negotiable for production-grade systems.
+            </p>
+            <p class="employer-benefit">
+              <span class="ember">Employer value:</span>
+              Knowledge transfer, faster onboarding, operational continuity when you're unavailable.
+            </p>
+          </div>
+
+          <div class="learning-card">
+            <span class="learning-num mono">04</span>
+            <h3>End-to-End Systems Thinking</h3>
+            <p>
+              From network topology and firewall rules down to DNS resolution and DHCP leases —
+              understanding how layers interact. Projects required designing, deploying, testing,
+              and troubleshooting entire systems independently without a safety net.
+            </p>
+            <p class="employer-benefit">
+              <span class="ember">Employer value:</span>
+              Technicians who diagnose root causes rather than just restarting services.
+            </p>
+          </div>
+
+          <div class="learning-card">
+            <span class="learning-num mono">05</span>
+            <h3>Self-Direction &amp; Initiative</h3>
+            <p>
+              Building an LLM agent (Oscar) entirely outside of any assignment, purely
+              out of curiosity about how language models work. Staying current with AI
+              tooling isn't a requirement — it's a habit. The program teaches the floor,
+              not the ceiling.
+            </p>
+            <p class="employer-benefit">
+              <span class="ember">Employer value:</span>
+              Motivated contributors who grow their skills without waiting to be asked.
+            </p>
+          </div>
+
+          <div class="learning-card">
+            <span class="learning-num mono">06</span>
+            <h3>Both Sides of the Stack</h3>
+            <p>
+              Equally comfortable in Windows Server environments (AD DS, GPO, PowerShell)
+              and Linux environments (Bash, Ubuntu Server, command-line-first workflows).
+              Most IT environments are mixed — being locked to one ecosystem is a
+              limitation that doesn't exist here.
+            </p>
+            <p class="employer-benefit">
+              <span class="ember">Employer value:</span>
+              Flexible contributors who adapt to your environment rather than needing
+              special accommodations.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ CONTACT / CONCLUSION ═══════════════════════ -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <header class="section-header fade-in">
+          <span class="section-tag mono">// 05</span>
+          <h2 id="contact-heading" class="section-title">Conclusion &amp; Contact</h2>
+        </header>
+
+        <div class="conclusion-block fade-in">
+          <h3 class="conclusion-title">Summary</h3>
+          <p class="conclusion-lead">
+            I came to NSCC to build a career grounded in real infrastructure skills — and
+            that's exactly what I've done. Over the past year I've designed and deployed
+            practical systems in Linux, Windows Server, and the cloud; automated
+            infrastructure with Bash and Python; and pursued emerging technology like
+            LLM development on my own time.
+          </p>
+          <ul class="conclusion-points">
+            <li>
+              <span class="teal">✦</span>
+              Chose NSCC for its direct industry pipeline and hands-on curriculum
+            </li>
+            <li>
+              <span class="teal">✦</span>
+              Pursuing roles in cybersecurity, cloud infrastructure, and systems administration
+            </li>
+            <li>
+              <span class="teal">✦</span>
+              Portfolio projects demonstrate design, deployment, security hardening, and automation
+            </li>
+            <li>
+              <span class="teal">✦</span>
+              Proven reliability: 6 years of zero-accident, 99% attendance in high-demand logistics
+            </li>
+            <li>
+              <span class="teal">✦</span>
+              Self-directed learner — building AI agents outside of any assignment
+            </li>
+          </ul>
+          <p class="conclusion-close">
+            I'm ready to bring these skills into a real team — and to keep growing fast.
+          </p>
+        </div>
+
+        <div class="contact-grid fade-in">
+          <div class="contact-channels">
+            <h3 class="contact-sub">Get in Touch</h3>
+            <div class="contact-links">
+              <a href="mailto:thealexgamble@gmail.com" class="contact-item">
+                <span class="contact-icon" aria-hidden="true">✉</span>
+                <span>thealexgamble@gmail.com</span>
+              </a>
+              <a href="https://www.linkedin.com/in/alex-gamble-987805351"
+                 target="_blank" rel="noopener noreferrer" class="contact-item">
+                <span class="contact-icon mono" aria-hidden="true">in</span>
+                <span>linkedin.com/in/alex-gamble-987805351</span>
+              </a>
+              <a href="https://github.com/JollyOscar"
+                 target="_blank" rel="noopener noreferrer" class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 16 16" fill="currentColor"
+                     aria-hidden="true" width="18" height="18">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                           0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+                           -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+                           .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+                           -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68
+                           0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51
+                           .56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+                           0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8
+                           c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                <span>github.com/JollyOscar</span>
+              </a>
+            </div>
+          </div>
+          <div class="contact-resume">
+            <h3 class="contact-sub mono">// Resume</h3>
+            <p>
+              Full targeted resume available — tailored for systems administration roles,
+              including the Irving Shipbuilding application.
+            </p>
+            <a href="https://jollyoscar.github.io/Resume_Assignment/"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary">View Resume Assignment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p class="mono footer-text">
+        Alex Gamble &nbsp;·&nbsp; IT Systems Management &amp; Security
+        &nbsp;·&nbsp; NSCC Truro &nbsp;·&nbsp; <span class="teal">2026</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
