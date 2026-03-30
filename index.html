@@ -251,26 +251,35 @@
 
           <!-- CAPSTONE — featured -->
           <article class="project-card project-featured fade-in" aria-label="Capstone 2026 project">
-            <div class="project-meta">
-              <span class="project-badge badge-teal">Capstone 2026</span>
+            <div class="project-content-main">
+              <div class="project-meta">
+                <span class="project-badge badge-teal">Capstone 2026 &mdash; Team Project</span>
+              </div>
+              <h3>Secure Remote Work Gateway</h3>
+              <p class="project-subtitle mono">Clientless VDI with MFA &amp; Threat Detection</p>
+              <p>
+                A browser-based secure remote access solution using Apache Guacamole, enabling
+                clientless VDI access to internal Windows desktops over HTTPS — no client software
+                required. Integrates Active Directory authentication via LDAPS, Duo Security MFA,
+                session recording, and automated alerting through a Discord/Slack webhook.
+              </p>
+              <ul class="project-detail-list">
+                <li>Three-VLAN segmented network (management, server/gateway, user simulation)</li>
+                <li>Fail2Ban brute-force protection + UFW firewall + TLS/SSL end-to-end</li>
+                <li>Guacamole deployed in Docker with custom branded extension</li>
+                <li>Automated threat watchdog with real-time webhook alerts</li>
+                <li>Role: <strong class="teal">Project Manager &amp; Documentation Lead</strong></li>
+              </ul>
             </div>
-            <h3>Capstone Project 2026</h3>
-            <p>
-              Final-year capstone project integrating the full scope of the Systems Management
-              &amp; Security program. A comprehensive, production-oriented deployment synthesising
-              networking, security hardening, and infrastructure design skills developed throughout
-              the diploma.
-            </p>
-            <ul class="project-detail-list">
-              <li>Full lifecycle: design → deployment → testing → documentation</li>
-              <li>Demonstrates readiness for real-world enterprise environments</li>
-              <li>Capstone represents the program's highest-order learning artifact</li>
-            </ul>
             <div class="project-footer">
               <ul class="tag-list" role="list">
-                <li class="tag tag-teal">Systems Security</li>
-                <li class="tag tag-teal">Infrastructure Design</li>
-                <li class="tag tag-teal">Capstone</li>
+                <li class="tag tag-teal">Apache Guacamole</li>
+                <li class="tag tag-teal">Docker</li>
+                <li class="tag tag-teal">Active Directory</li>
+                <li class="tag tag-teal">Duo MFA</li>
+                <li class="tag tag-teal">Windows Server 2025</li>
+                <li class="tag tag-teal">Ubuntu Server</li>
+                <li class="tag tag-teal">Fail2Ban / UFW</li>
               </ul>
               <a href="https://github.com/JollyOscar/Capstone2026"
                  target="_blank" rel="noopener noreferrer"
@@ -284,17 +293,26 @@
               <span class="project-icon" aria-hidden="true">🤖</span>
               <span class="project-badge badge-ember">Self-Directed</span>
             </div>
-            <h3>Oscar — LLM Agent</h3>
+            <h3>Oscar — Local AI Assistant</h3>
             <p>
-              A self-directed project: building a custom AI conversational agent from scratch.
-              No assignment, no deadline — purely curiosity-driven exploration of language
-              model architecture and Python AI tooling outside the core curriculum.
+              A fully local, privacy-first AI assistant built from scratch — no cloud, no API keys,
+              runs entirely on-device. Features screen reading via a vision model (LLaVA), web search,
+              sandboxed Python/Bash code execution, and persistent neural memory across sessions.
             </p>
+            <ul class="project-detail-list">
+              <li>React/Vite web GUI with real-time streaming and GPU telemetry</li>
+              <li>OpenAI-compatible FastAPI backend — drop-in for VS Code Continue/Roo Code</li>
+              <li>MCP server: exposes Oscar's tools to any MCP-compatible client</li>
+              <li>Self-evolution: writes and registers its own tool plugins at runtime</li>
+            </ul>
             <div class="project-footer">
               <ul class="tag-list" role="list">
                 <li class="tag tag-ember">Python</li>
-                <li class="tag tag-ember">LLM</li>
-                <li class="tag tag-ember">AI Agent</li>
+                <li class="tag tag-ember">FastAPI</li>
+                <li class="tag tag-ember">Ollama (llama3.1 / LLaVA)</li>
+                <li class="tag tag-ember">React / Vite</li>
+                <li class="tag tag-ember">Docker sandbox</li>
+                <li class="tag tag-ember">MCP Server</li>
               </ul>
               <a href="https://github.com/JollyOscar/LLM"
                  target="_blank" rel="noopener noreferrer"
